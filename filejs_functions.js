@@ -155,18 +155,22 @@ function fact(n) {
 let num = parseInt(prompt("Entrez un nombre", 1));
 console.log(fact(num));
 
-// Exercice 7 (boucles)
-function rangeLoop(a, b) {
-    let s = "";
-    for (let i = a + 1; i < b; i++) {
-        s += i + "-"
-    }
-    return s;
-}
+// Exercice 7 (RANGE) OUARAZ ASMAA 3IIR
+let range = function(deb_num, fin_num) 
+{
+  if (fin_num - deb_num === 2) 
+  {
+    return [deb_num + 1];
+  } 
+  else 
+  {
+    let list = range(deb_num, fin_num - 1);
+    list.push(fin_num - 1);
+    return list;
+  }
+};
 
-let a = parseInt(prompt("Entrez a"));
-let b = parseInt(prompt("Entrez b"));
-console.log(rangeLoop(a, b));
+console.log(range(2,9));
 
 // Exercice 7 (fonction récursive)
 function rangeRec(x, y) {
